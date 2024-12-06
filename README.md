@@ -1,1 +1,2 @@
-# ordinario_admin_db_gamboa-alumno1-arteachi-alumno2
+# Ordinario de Base de datos
+### Por Ángel Arteachi y Gonzalo Gamboa
