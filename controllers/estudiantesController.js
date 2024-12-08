@@ -1,6 +1,17 @@
 const db = require("../config/db");
 
-// Aqui crea tu endpoint GET para obtener todos los estudiantes (getEstudiantes)
+const getEstudiantes = async (req, res) => {
+    try {
+        const [rows] = await db.query('SELECT * FROM estudiantes');
+        res.status(200).json({
+            success: true,
+            data: rows,
+        });
+    } catch (err) {
+        console.error('Error al obtener los estudiantes: ', err);
+        res.status(500).json({ success: false, error: 'Error al obtener los estudiantes' });
+    }
+};
 
 const createEstudiante = async (req, res) => {
     const { nombre, apellidos, email, matricula, edad, semestre } = req.body;
@@ -16,4 +27,4 @@ const createEstudiante = async (req, res) => {
     }
 };
 
-module.exports = { createEstudiante };
+module.exports = { getEstudiantes, createEstudiante };
