@@ -1,5 +1,6 @@
 const db = require("../config/db");
 
+// Obtener todos los estudiantes
 const getEstudiantes = async (req, res) => {
     try {
         const [rows] = await db.query('SELECT * FROM estudiantes');
@@ -13,6 +14,7 @@ const getEstudiantes = async (req, res) => {
     }
 };
 
+// Crear un estudiante
 const createEstudiante = async (req, res) => {
     const { nombre, apellidos, email, matricula, edad, semestre } = req.body;
     try {
