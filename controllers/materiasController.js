@@ -19,7 +19,7 @@ const createMateria = async (req, res) => {
     const { nombre, profesor_id } = req.body;
     try {
         const [result] = await db.query(
-            'INSERT INTO materias (nombre, profesor_id, create_date) VALUES (?, ?, NOW())',
+            'INSERT INTO materias (nombre, profesor_id, fecha_creacion) VALUES (?, ?, NOW())',
             [nombre, profesor_id]
         );
         res.status(201).json({ id: result.insertId, message: 'Materia creada exitosamente' });

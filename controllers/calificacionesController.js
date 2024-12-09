@@ -19,7 +19,7 @@ const createCalificacion = async (req, res) => {
     const { estudiante_id, maestro_id, materia_id } = req.body;
     try {
         const [result] = await db.query(
-            'INSERT INTO calificaciones (estudiante_id, maestro_id, materia_id, create_date) VALUES (?, ?, ?, NOW())',
+            'INSERT INTO calificaciones (estudiante_id, maestro_id, materia_id, fecha_creacion) VALUES (?, ?, ?, NOW())',
             [estudiante_id, maestro_id, materia_id ]
         );
         res.status(201).json({ id: result.insertId, message: 'Calificación creada exitosamente' });
