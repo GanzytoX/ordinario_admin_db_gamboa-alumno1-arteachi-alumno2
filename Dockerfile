@@ -13,7 +13,7 @@ RUN npm install
 # Copia el resto de los archivos de tu aplicación
 COPY . .
 
-# Expone el puerto 3011
+# Expone el puerto 3000
 EXPOSE 3000
 
 # Comando para iniciar tu aplicación
